@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userHobbies = "";
     $userCountry = "";
 
-    // Check if users.txt file exists (path relative to php folder)
     $usersFile = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'users.txt';
     if (file_exists($usersFile)) {
         $users = file($usersFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
@@ -44,7 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if ($found) {
-        // Store user data in session
         $_SESSION['logged_in'] = true;
         $_SESSION['username'] = $username;
         $_SESSION['fullname'] = $userFullName;
@@ -53,7 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['hobbies'] = $userHobbies;
         $_SESSION['country'] = $userCountry;
         
-        // Redirect to dashboard PHP file
         header("Location: dashboard.php");
         exit();
     } else {

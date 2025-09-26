@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hobbies = isset($_POST['hobbies']) ? implode(",", $_POST['hobbies']) : "";
     $country = $_POST['country'];
 
-    // Check if passwords match
     if ($password !== $confirm_password) {
         echo "<script>
             alert('Error: Passwords do not match!');
@@ -20,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Check if username already exists
+    //
     $userExists = false;
     $usersFile = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'users.txt';
     if (file_exists($usersFile)) {
@@ -44,7 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Save user info (username|password|fullname|email|gender|hobbies|country)
     $data = $username . "|" . $password . "|" . $fullname . "|" . $email . "|" . $gender . "|" . $hobbies . "|" . $country . "\n";
     
     if (file_put_contents($usersFile, $data, FILE_APPEND | LOCK_EX) !== false) {

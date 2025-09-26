@@ -9,7 +9,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     exit();
 }
 
-// Optional: Function to get current user data
+// Function to get current user data
 function getCurrentUser() {
     return array(
         'username' => $_SESSION['username'] ?? '',
@@ -21,7 +21,7 @@ function getCurrentUser() {
     );
 }
 
-// Optional: Function to check if user is logged in
+// Function to check if user is logged in
 function isLoggedIn() {
     return isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 }

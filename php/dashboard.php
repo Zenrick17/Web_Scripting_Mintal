@@ -1,12 +1,10 @@
-x <?php
-    // Include session check to ensure user is logged in
-    require_once '../php/session_check.php';
+<?php
+require_once '../php/session_check.php';
 
-    // Get current user data
-    $currentUser = getCurrentUser();
-    $username = $currentUser['username'];
-    $fullname = $currentUser['fullname'];
-    ?>
+$currentUser = getCurrentUser();
+$username = $currentUser['username'];
+$fullname = $currentUser['fullname'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 

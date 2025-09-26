@@ -7,23 +7,14 @@
 
 :root {
     --primary: #ab2e22;
-    /* Maroon */
     --primary-dark: #4d120b;
-    /* Darker Maroon */
     --secondary: #f7d22b;
-    /* Gold */
     --light: #ffffff;
-    /* White */
     --dark: #291209;
-    /* Dark Brown */
     --success: #228B22;
-    /* Forest Green */
     --danger: #640f0f;
-    /* Crimson */
     --border: #f5f5dc;
-    /* Beige */
     --accent: #cf882a;
-    /* Dark Gold */
 }
 
 body {
@@ -1011,19 +1002,19 @@ button:hover,
     padding: 2rem;
     max-height: 70vh;
     overflow-y: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .modal-body::-webkit-scrollbar {
     width: 0;
     height: 0;
-    display: none; /* Chrome, Safari, Edge */
+    display: none;
 }
 
 .schedule-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
 }
 
@@ -1049,12 +1040,11 @@ button:hover,
 
 .time-slot {
     display: grid;
-    /* allow the middle column to shrink properly in CSS Grid to avoid overflow */
-    grid-template-columns: 120px minmax(0, 1fr) 150px;
+    grid-template-columns: 120px minmax(140px, 1fr) 160px;
     gap: 1rem;
     padding: 0.8rem 0;
     border-bottom: 1px solid #e0e0e0;
-    align-items: center;
+    align-items: start;
     box-sizing: border-box;
 }
 
@@ -1078,10 +1068,11 @@ button:hover,
     color: #333;
     font-weight: 600;
     font-size: 0.95rem;
-    /* allow breaking and wrapping so long event titles don't overflow their column */
-    min-width: 0; /* necessary for child in a grid to be able to shrink */
-    overflow-wrap: anywhere;
-    word-break: break-word;
+    display: block;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+    min-width: 0;
 }
 
 .time-slot .venue {

@@ -6,7 +6,6 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 20px;
-  /* Use a web path relative to the CSS file - now from css folder, go up one level to images */
   background-image: url('../images/Um_bg.png');
   background-size: cover;
   background-position: center;
